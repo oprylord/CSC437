@@ -27,7 +27,7 @@ export class AddRoundElement extends LitElement {
   <mu-form .init=${this.init}>
   <label>
     <span> ${this.people[0]}</span>
-    <input name="${this.people[0]}"  type= "number" placeholder=0 autocomplete="off" />
+    <input name="${this.people[0]}"  type= "number" autocomplete="off" />
   </label>
   <label>
     <span>${this.people[1]}</span>

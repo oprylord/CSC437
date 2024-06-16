@@ -56,7 +56,15 @@ export class CreateViewElement extends View<Model, Msg> {
   
   
     static styles = css`
-
+  h2{
+    color: var(--color-text-header);
+  }
+  p{
+    color: var(--color-text-header);
+  }
+  span{
+    color: var(--color-text-header);
+  }
   `;
   
 }

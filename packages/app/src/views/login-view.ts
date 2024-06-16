@@ -54,5 +54,11 @@ export class LoginViewElement extends View<Model, Msg> {
     super.connectedCallback(); 
   }
   static styles = css`
+    h1{
+    color: var(--color-text-header);
+  }
+  span{
+    color: var(--color-text-header);
+  }
   `;
 }

@@ -48,36 +48,36 @@ export class GameViewElement extends View<Model, Msg> {
     }
     const players = game.people.map((person) => [person, game.Scores[person]]);
     return html`
-    <box>
-    <h1> Game ID: ${game.id} </h1>
-    
-    ${players.map((player) => html`
-      <playerbox>
-          ${player[0]} : ${player[1]} 
-          </playerbox>
-  `)}
+                <game-object
+                    name="${game.id}"
+                    .players="${players}"
+                    .people="${game.people}"
+                    .scores="${game.Scores}"
+                ></game-object>
+            
+  
 
-    </box>
-
-
-
-    <box2>
+<box>
+  
     ${game.Rounds.map((round) => html`
-      <round>
+      <box_footer>
         ${Object.keys(round.RoundWinnings).map((player) => html`
-        <singlescore>${player} : ${round.RoundWinnings[player]}<singlescore>
+        <playerbox>
+        ${player} : ${round.RoundWinnings[player]}
+    </playerbox>
         `)}
-    </round>
+        </box_footer>
 `)}
-<br>
+</box>
 
 
+<box>
 <box style="background:orange"> + Add a Round</box>
      <add-round
       .init=${this.newRound}
       .people=${game.people}
       @mu-form:submit=${(event: Form.SubmitEvent<Round>)=> this._handleSubmit(event)}></add-round>
-</box2>
+</box>
 
 
 
@@ -136,47 +136,29 @@ export class GameViewElement extends View<Model, Msg> {
       text-align: center;
     font-size: 30px;
     display: block;
-    height:auto;
-    margin: 40px 40px ;
+    align-items: center;
+    margin: 20px;
     width:auto;
-    border:solid 7px #000;
-    font-family:"Courier New Bold", monospace;
+    border:solid 7px var(--color-border);
     color: var(--color-text-header);
-    border-color: var(--color-border);
+    font-family:"Courier New Bold", monospace;
     flex-direction: column; //trigger for this to switch between
     }
 
 
-
-    box2 {
-    font-size: 30px;
-    display: block;
-    
-    margin: 40px 40px ;
-    font-family:"Courier New Bold", monospace;
-    color: var(--color-text-header);
-    border-color: var(--color-border);
-    }
-    
-  
-
-    singlescore{
-      text-align : center;
-      border: solid 7px var(--color-border);
-    }
-
-    
-    
+    box_footer {
+        align-self: center;
+        display: flex;
+      }
 
     playerbox{
-
         font-size: 30px;
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin: 30px;
+    padding: 50px 20px;
+    width:25%;
     border:solid 7px var(--color-border);
-
     }
 
   `;

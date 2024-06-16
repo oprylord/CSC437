@@ -34,7 +34,7 @@ export class MultiViewElement extends View<Model, Msg> {
                     .players="${players}"
                     .people="${game.people}"
                     .scores="${game.Scores}"
-                ></game-object card>
+                ></game-object>
             `;
         })}
   
