@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <script type="importmap">
+        {
+          "imports": {
+            "@calpoly/mustang": "/node_modules/@calpoly/mustang/dist/mustang.js" 
+          }
+        }
+      </script>
+                  <!-- should this be .mjs?-->
+
+      <script type="module">
+        import { define, Auth } from "@calpoly/mustang";
+  
+        define({ "mu-auth": Auth.Provider });
+      </script>
+
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/topbar.js"></script>
+    <script type="module" src="/js/json-loader.js"></script>
+    <script type="module" src="/js/restful-form.js"></script>
+    <script type="module" src="/js/profile-viewer.js"></script>
+    
+
+
+</head>
+
+
+<mu-auth provides="majoogs:auth" redirect="../login.html">
+    <blazing-header></blazing-header>
+<body>
+    
+    <top-nav></top-nav>
+
+
+
+  
+
+    <mu-auth provides="majoogs:auth" redirect="../login.html">
+        <blazing-header></blazing-header>
+        <main>
+          <profile-view src="/api/profiles/admin2"></profile-view>
+        </main>
+      </mu-auth>
+
+
+      
+    <!-- <div class="container">
+        <json-object src="/api/profiles/admin2">
+            <a
+              href="#"
+              onclick="relayEvent(event, 'json-object:open')">
+              Senor Zepeda
+            </a>
+          </json-object>
+
+        <restful-form slot="form" src="/api/profiles/admin">
+            <label>
+                <span>ID</span>
+                <input name="id">
+            </label>
+            <br>
+            <label>
+                <span>Name</span>
+                <input name="name" placeholder="Name">
+            </label>
+            <br>
+            <label>
+                <span>Points</span>
+                <input name="points" type="number" placeholder="25000">
+            </label>
+            <br>
+            <label>
+                <span>Avatar</span>
+                <input name="avatar">
+            </label>
+            <br>
+            <label>
+                <span>Color</span>
+                <input name="color" type="color">
+            </label>
+
+
+        </restful-form>
+    </div> -->
+
+
+    <a
+  href="#"
+  onclick="relayEvent(event, 'auth:message', ['auth/signout'])">
+  Sign out
+</a>
+   
+
+</body>
+</mu-auth>
+</html>

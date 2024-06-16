@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+        <script type="importmap">
+        {
+          "imports": {
+            "@calpoly/mustang": "/node_modules/@calpoly/mustang/dist/mustang.js" 
+          }
+        }
+      </script>
+                  <!-- should this be .mjs?-->
+
+      <script type="module">
+        import { define, Auth } from "@calpoly/mustang";
+  
+        define({ "mu-auth": Auth.Provider });
+      </script>
+
+
+
+
+
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/topbar.js"></script>
+    <script type="module" src="./js/json-loader.js"></script>
+    <script type="module" src="./js/restful-form.js"></script>
+    <script type="module" src="./js/profile-viewer.js"></script>
+    <script type="module" src="./js/login-form.js"></script>
+
+
+
+    
+
+
+</head>
+<body>
+    
+    <top-nav></top-nav>
+    
+    <!-- 
+        currently darkmode from template doesn't work
+        something about how events are tied to something else? idrk
+    -->
+
+    <label class="czechbox"
+        onchange="relayEvent(
+        event, 
+        'dark-mode', 
+        {checked: event.target.checked})">
+        <input type="checkbox" autocomplete="off"/>
+        Dark Mode
+        </label>
+
+
+
+        <mu-auth provides="majoogs:auth" redirect="./Game.html">
+            <h2>User Login</h2>
+        <main class="card">
+          <login-form>
+            <label>
+              <span>Username:</span>
+              <input name="username" autocomplete="off" />
+            </label>
+            <label>
+              <span>Password:</span>
+              <input type="password" name="password" />
+            </label>
+          </login-form>
+        </main>
+        <p>
+          Or did you want to
+          <a href="./newuser.html">Sign up as a new user</a>
+          ?
+        </p>
+      </mu-auth>
+
+
+
+</body>
+</html>

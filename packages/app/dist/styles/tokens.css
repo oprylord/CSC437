@@ -1,0 +1,17 @@
+:root {
+    /*flesh this out more ig, less redundancy in each css */
+--color-background-header: #e49754;
+--color-background-page: #94a3b4;
+--color-text-header: #0026ff;
+--color-text-links: #0026ff;
+--color-border: black;
+}
+
+
+body.dark-mode{
+    --color-background-header: #1f1f1f;
+    --color-background-page: #181818;
+    --color-text-header: rgb(168, 0, 0);
+    --color-text-links: var(--color-text-header);
+    --color-border: rgb(159, 158, 158);
+}

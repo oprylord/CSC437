@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+
+    
+  <script type="module" crossorigin src="/assets/index-CcEOqyYV.js"></script>
+</head>
+<body>
+    <mu-history provides="majoogs:history">
+    <mu-auth provides="majoogs:auth" redirect="./login.html">
+        <mu-store provides="majoogs:model">
+    
+    <top-nav></top-nav>
+    <mu-switch></mu-switch>
+    <a href="/app">main</a>
+    <a href="/app/createGame">create</a>
+    <a href="/app/login">log</a>
+    <a href="/app/register">reg</a>
+    
+    <!-- 
+        currently darkmode from template doesn't work
+        something about how events are tied to something else? idrk
+    -->
+
+    <!-- <label class="czechbox"
+        onchange="relayEvent(
+        event, 
+        'dark-mode', 
+        {checked: event.target.checked})">
+        <input type="checkbox" autocomplete="off"/>
+        Dark Mode
+        </label> -->
+
+
+        <!--
+    <div class="container">
+        <a href="./HTMLS/Players.html"> 
+            <div class="midbox">Players</div> </a>
+        <br>
+        <a href="./HTMLS/Wall.html"> 
+            <div class="midbox">Wall </div> </a>
+            
+    </div>
+
+    <div class="container">
+        <div class="midbox">
+        <details>
+            <summary style="text-align: center;">Yaku & Fu</summary>
+            <a href="Game.html"> 
+                <div class="midbox">counting is hard </div> </a>
+        </details>
+        </div>
+    </div>
+
+    <div class="container">
+       <json-object src="/api/profiles/blaze">
+            <a
+              href="#"
+              onclick="relayEvent(event, 'json-object:open')">
+              Blaze Pasquale
+            </a>
+          </json-object>
+
+        <restful-form slot="form" src="/api/profiles/blaze">
+            <label>
+                <span>ID</span>
+                <input name="id">
+            </label>
+            <br>
+            <label>
+                <span>Name</span>
+                <input name="name" placeholder="Name">
+            </label>
+            <br>
+            <label>
+                <span>Points</span>
+                <input name="points" type="number" placeholder="25000">
+            </label>
+            <br>
+            <label>
+                <span>Avatar</span>
+                <input name="avatar">
+            </label>
+            <br>
+            <label>
+                <span>Color</span>
+                <input name="color" type="color">
+            </label>
+
+
+        </restful-form> 
+    </div>-->
+
+</mu-store>     
+</mu-auth>
+</mu-history>
+</body>
+</html>

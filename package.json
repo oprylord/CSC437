@@ -9,7 +9,13 @@
   "author": "",
   "license": "ISC",
   "workspaces": [
-	"packages/*"
-  ]
-
+    "packages/*"
+  ],
+  "dependencies": {
+    "@calpoly/mustang": "^0.1.13",
+    "lit": "^3.1.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
 }

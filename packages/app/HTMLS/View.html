@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+
+    
+      <script type="module" src="/src/main"></script>
+      <script type="module">
+        function toggleDarkMode(page, checked) {
+        page.classList.toggle("dark-mode", checked);
+        }
+
+        document.body.addEventListener("dark-mode", (event) =>
+        toggleDarkMode(
+            event.currentTarget,
+            event.detail.checked
+        )
+        );
+      </script>
+
+    
+
+
+</head>
+<body>
+    <mu-history provides="majoogs:history">
+    <mu-auth provides="majoogs:auth" redirect="./login.html">
+        <mu-store provides="majoogs:model">
+        <article class="page">
+    <top-nav></top-nav>
+    <mu-switch></mu-switch>
+
+</article>   
+</mu-store>     
+</mu-auth>
+</mu-history>
+</body>
+</html>
